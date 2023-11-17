@@ -1,0 +1,1 @@
+This is a program which can help you with geometric figures in mathematics. The program is made in c++.
