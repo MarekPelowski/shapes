@@ -1,5 +1,4 @@
 #include <iostream>
-//template <typename T, typename U>
 
 class Rectangle{
     private:
@@ -25,14 +24,57 @@ class Rectangle{
         return (side1 * 2) + (side2 * 2);
     }
 
+    void showShape(){
+        if(side1 > 2 && side2 > 2){
+            drawShape();
+        }
+        else{
+            std::cout << "Invalid sides";
+        }
+
+    }
+
+    void drawShape(){
+        for(int i = 0; i < side1 / 2 - 1; i++){
+            std::cout << "  ";
+        }
+        std::cout << side1 << "cm" << std::endl;
+
+        for(int i = 0; i < side1; i++){
+            std::cout << "- ";
+        }
+
+        std::cout << std::endl;
+
+        for(int i = 0; i < side2 - 2; i++){
+            std::cout << "- ";
+            for(int i = 0; i < side1-2; i++){
+                std::cout << "  ";
+            }
+
+            if(i == side2 / 2 - 1){
+                std::cout << "- ";
+                std::cout << side2 << "cm\n";
+                continue;
+            }
+            std::cout << "- \n";
+
+
+        }
+
+        for(int i = 0; i < side1; i++){
+            std::cout << "- ";
+        }
+    }
+
+
 };
 
 int main()
 {   
-    Rectangle rectangle1(213, 301.3);
+    Rectangle rectangle1(12, 12);
 
-    std::cout << rectangle1.showArea() << std::endl;
-    std::cout << rectangle1.showCircumference() << std::endl;
+    rectangle1.showShape();
 
     return 0;
 }
